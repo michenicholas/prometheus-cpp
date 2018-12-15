@@ -9,6 +9,7 @@
 #include "prometheus/detail/ckms_quantiles.h"
 #include "prometheus/detail/summary_builder.h"
 #include "prometheus/detail/time_window_quantiles.h"
+#include "prometheus/detail/visibility.h"
 #include "prometheus/metric_type.h"
 
 namespace prometheus {
@@ -37,7 +38,7 @@ namespace prometheus {
 ///
 /// The class is thread-safe. No concurrent call to any API of this type causes
 /// a data race.
-class Summary {
+class PROMETHEUSCPP_API Summary {
  public:
   using Quantiles = std::vector<detail::CKMSQuantiles::Quantile>;
 
@@ -117,6 +118,6 @@ class Summary {
 ///
 /// To finish the configuration of the Summary metric register it with
 /// Register(Registry&).
-detail::SummaryBuilder BuildSummary();
+PROMETHEUSCPP_API detail::SummaryBuilder BuildSummary();
 
 }  // namespace prometheus

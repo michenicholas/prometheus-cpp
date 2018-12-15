@@ -5,6 +5,7 @@
 #include "prometheus/client_metric.h"
 #include "prometheus/counter.h"
 #include "prometheus/detail/histogram_builder.h"
+#include "prometheus/detail/visibility.h"
 #include "prometheus/metric_type.h"
 
 namespace prometheus {
@@ -25,7 +26,7 @@ namespace prometheus {
 ///
 /// The class is thread-safe. No concurrent call to any API of this type causes
 /// a data race.
-class Histogram {
+class PROMETHEUSCPP_API Histogram {
  public:
   using BucketBoundaries = std::vector<double>;
 
@@ -89,6 +90,6 @@ class Histogram {
 ///
 /// To finish the configuration of the Histogram metric register it with
 /// Register(Registry&).
-detail::HistogramBuilder BuildHistogram();
+PROMETHEUSCPP_API detail::HistogramBuilder BuildHistogram();
 
 }  // namespace prometheus

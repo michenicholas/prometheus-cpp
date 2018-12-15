@@ -20,6 +20,13 @@ if(OVERRIDE_CXX_STANDARD_FLAGS)
   set(CMAKE_CXX_EXTENSIONS Off)
 endif()
 
+# Hide things by default for shared libraries
+if(BUILD_SHARED_LIBS)
+  set(CMAKE_C_VISIBILITY_PRESET hidden)
+  set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+  set(CMAKE_VISIBILITY_INLINES_HIDDEN YES)
+endif()
+
 set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
 find_package(Threads)
 

@@ -5,9 +5,11 @@
 #include <tuple>
 #include <vector>
 
+#include "prometheus/detail/visibility.h"
+
 namespace prometheus {
 
-struct ClientMetric {
+struct PROMETHEUSCPP_API ClientMetric {
   // Label
 
   struct Label {

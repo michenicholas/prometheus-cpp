@@ -2,8 +2,10 @@
 
 #include <string>
 
+#include "prometheus/detail/visibility.h"
+
 namespace prometheus {
 
-bool CheckMetricName(const std::string& name);
-bool CheckLabelName(const std::string& name);
+PROMETHEUSCPP_API bool CheckMetricName(const std::string& name);
+PROMETHEUSCPP_API bool CheckLabelName(const std::string& name);
 }  // namespace prometheus

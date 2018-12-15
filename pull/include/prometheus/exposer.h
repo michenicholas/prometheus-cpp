@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "prometheus/collectable.h"
+#include "prometheus/detail/visibility.h"
 #include "prometheus/registry.h"
 
 class CivetServer;
@@ -17,7 +18,7 @@ namespace detail {
 class MetricsHandler;
 }  // namespace detail
 
-class Exposer {
+class PROMETHEUSCPP_API Exposer {
  public:
   explicit Exposer(const std::string& bind_address,
                    const std::string& uri = std::string("/metrics"),

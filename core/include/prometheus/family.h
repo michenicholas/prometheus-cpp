@@ -17,6 +17,7 @@
 #include "prometheus/collectable.h"
 #include "prometheus/detail/future_std.h"
 #include "prometheus/detail/utils.h"
+#include "prometheus/detail/visibility.h"
 #include "prometheus/metric_family.h"
 
 namespace prometheus {
@@ -58,7 +59,7 @@ namespace prometheus {
 ///
 /// \tparam T One of the metric types Counter, Gauge, Histogram or Summary.
 template <typename T>
-class Family : public Collectable {
+class PROMETHEUSCPP_API Family : public Collectable {
  public:
   /// \brief Create a new metric.
   ///

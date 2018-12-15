@@ -5,10 +5,12 @@
 #include <functional>
 #include <vector>
 
+#include "prometheus/detail/visibility.h"
+
 namespace prometheus {
 namespace detail {
 
-class CKMSQuantiles {
+class PROMETHEUSCPP_API CKMSQuantiles {
  public:
   struct Quantile {
     const double quantile;

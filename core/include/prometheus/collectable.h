@@ -2,6 +2,8 @@
 
 #include <vector>
 
+#include "prometheus/detail/visibility.h"
+
 namespace prometheus {
 struct MetricFamily;
 }
@@ -12,7 +14,7 @@ namespace prometheus {
 /// collect metrics.
 ///
 /// A Collectable has to be registered for collection. See Registry.
-class Collectable {
+class PROMETHEUSCPP_API Collectable {
  public:
   virtual ~Collectable() = default;
 

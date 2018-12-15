@@ -4,6 +4,7 @@
 
 #include "prometheus/client_metric.h"
 #include "prometheus/detail/gauge_builder.h"
+#include "prometheus/detail/visibility.h"
 #include "prometheus/metric_type.h"
 
 namespace prometheus {
@@ -20,7 +21,7 @@ namespace prometheus {
 ///
 /// The class is thread-safe. No concurrent call to any API of this type causes
 /// a data race.
-class Gauge {
+class PROMETHEUSCPP_API Gauge {
  public:
   static const MetricType metric_type{MetricType::Gauge};
 
@@ -88,6 +89,6 @@ class Gauge {
 ///
 /// To finish the configuration of the Gauge metric register it with
 /// Register(Registry&).
-detail::GaugeBuilder BuildGauge();
+PROMETHEUSCPP_API detail::GaugeBuilder BuildGauge();
 
 }  // namespace prometheus
