@@ -23,7 +23,12 @@ target_include_directories(push
     ${CURL_INCLUDE_DIRS}
 )
 
-set_target_properties(push PROPERTIES OUTPUT_NAME ${PROJECT_NAME}-push)
+set_target_properties(push
+  PROPERTIES
+    OUTPUT_NAME ${PROJECT_NAME}-push
+    VERSION "${PROJECT_VERSION}"
+    SOVERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
+)
 
 install(
   TARGETS push

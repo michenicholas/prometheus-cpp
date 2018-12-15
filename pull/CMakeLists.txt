@@ -40,7 +40,12 @@ target_compile_definitions(pull
     $<$<BOOL:${ENABLE_COMPRESSION}>:HAVE_ZLIB>
 )
 
-set_target_properties(pull PROPERTIES OUTPUT_NAME ${PROJECT_NAME}-pull)
+set_target_properties(pull
+  PROPERTIES
+    OUTPUT_NAME ${PROJECT_NAME}-pull
+    VERSION "${PROJECT_VERSION}"
+    SOVERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
+)
 
 install(
   TARGETS pull

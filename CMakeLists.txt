@@ -1,7 +1,7 @@
 
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
-project(prometheus-cpp)
+project(prometheus-cpp VERSION 0.8.0)
 
 include(GNUInstallDirs)
 

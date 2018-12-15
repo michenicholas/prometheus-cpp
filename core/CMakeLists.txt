@@ -30,7 +30,12 @@ target_include_directories(core
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 )
 
-set_target_properties(core PROPERTIES OUTPUT_NAME ${PROJECT_NAME}-core)
+set_target_properties(core
+  PROPERTIES
+    OUTPUT_NAME ${PROJECT_NAME}-core
+    VERSION "${PROJECT_VERSION}"
+    SOVERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
+)
 
 install(
   TARGETS core
