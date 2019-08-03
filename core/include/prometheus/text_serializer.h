@@ -4,13 +4,13 @@
 #include <string>
 #include <vector>
 
-#include "prometheus/detail/visibility.h"
+#include "prometheus/detail/core_export.h"
 #include "prometheus/metric_family.h"
 #include "prometheus/serializer.h"
 
 namespace prometheus {
 
-class PROMETHEUSCPP_API TextSerializer : public Serializer {
+class PROMETHEUS_CPP_CORE_EXPORT TextSerializer : public Serializer {
  public:
   using Serializer::Serialize;
   void Serialize(std::ostream& out,

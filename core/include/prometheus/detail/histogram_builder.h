@@ -3,7 +3,7 @@
 #include <map>
 #include <string>
 
-#include "prometheus/detail/visibility.h"
+#include "prometheus/detail/core_export.h"
 
 namespace prometheus {
 
@@ -14,7 +14,7 @@ class Registry;
 
 namespace detail {
 
-class PROMETHEUSCPP_API HistogramBuilder {
+class PROMETHEUS_CPP_CORE_EXPORT HistogramBuilder {
  public:
   HistogramBuilder& Labels(const std::map<std::string, std::string>& labels);
   HistogramBuilder& Name(const std::string&);

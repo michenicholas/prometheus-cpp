@@ -7,6 +7,11 @@ add_library(push
 
 add_library(${PROJECT_NAME}::push ALIAS push)
 
+generate_export_header(push
+  EXPORT_FILE_NAME include/prometheus/detail/push_export.h
+  PREFIX_NAME PROMETHEUS_CPP_
+)
+
 target_link_libraries(push
   PUBLIC
     ${PROJECT_NAME}::core
@@ -19,6 +24,7 @@ target_link_libraries(push
 target_include_directories(push
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
   PRIVATE
     ${CURL_INCLUDE_DIRS}
 )
@@ -40,7 +46,7 @@ install(
 )
 
 install(
-  DIRECTORY include/
+  DIRECTORY include/ ${CMAKE_CURRENT_BINARY_DIR}/include/
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 

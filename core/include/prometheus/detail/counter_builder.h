@@ -3,7 +3,7 @@
 #include <map>
 #include <string>
 
-#include "prometheus/detail/visibility.h"
+#include "prometheus/detail/core_export.h"
 
 namespace prometheus {
 
@@ -14,7 +14,7 @@ class Registry;
 
 namespace detail {
 
-class PROMETHEUSCPP_API CounterBuilder {
+class PROMETHEUS_CPP_CORE_EXPORT CounterBuilder {
  public:
   CounterBuilder& Labels(const std::map<std::string, std::string>& labels);
   CounterBuilder& Name(const std::string&);

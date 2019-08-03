@@ -7,12 +7,12 @@
 #include <string>
 #include <vector>
 
-#include "prometheus/detail/visibility.h"
+#include "prometheus/detail/push_export.h"
 #include "prometheus/registry.h"
 
 namespace prometheus {
 
-class PROMETHEUSCPP_API Gateway {
+class PROMETHEUS_CPP_PUSH_EXPORT Gateway {
  public:
   using Labels = std::map<std::string, std::string>;
 

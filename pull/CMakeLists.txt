@@ -18,6 +18,11 @@ add_library(pull
 
 add_library(${PROJECT_NAME}::pull ALIAS pull)
 
+generate_export_header(pull
+  EXPORT_FILE_NAME include/prometheus/detail/pull_export.h
+  PREFIX_NAME PROMETHEUS_CPP_
+)
+
 target_link_libraries(pull
   PUBLIC
     ${PROJECT_NAME}::core
@@ -31,6 +36,7 @@ target_link_libraries(pull
 target_include_directories(pull
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
   PRIVATE
     ${CIVETWEB_INCLUDE_DIRS}
 )
@@ -57,7 +63,7 @@ install(
 )
 
 install(
-  DIRECTORY include/
+  DIRECTORY include/ ${CMAKE_CURRENT_BINARY_DIR}/include/
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 

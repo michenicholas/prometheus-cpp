@@ -8,12 +8,12 @@
 
 #include "prometheus/collectable.h"
 #include "prometheus/counter.h"
+#include "prometheus/detail/core_export.h"
 #include "prometheus/detail/counter_builder.h"
 #include "prometheus/detail/future_std.h"
 #include "prometheus/detail/gauge_builder.h"
 #include "prometheus/detail/histogram_builder.h"
 #include "prometheus/detail/summary_builder.h"
-#include "prometheus/detail/visibility.h"
 #include "prometheus/family.h"
 #include "prometheus/gauge.h"
 #include "prometheus/histogram.h"
@@ -35,7 +35,7 @@ namespace prometheus {
 ///
 /// The class is thread-safe. No concurrent call to any API of this type causes
 /// a data race.
-class PROMETHEUSCPP_API Registry : public Collectable {
+class PROMETHEUS_CPP_CORE_EXPORT Registry : public Collectable {
  public:
   /// \brief Returns a list of metrics and their samples.
   ///
